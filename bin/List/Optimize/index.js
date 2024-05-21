@@ -1,31 +1,35 @@
 import inquirer from 'inquirer';
+import cleanTemp from './Options/cltemp.js';
+import defragHd from './Options/defragHd.js';
+import performanceBoost from './Options/performanceBoost.js';
+import powerPlan from './Options/powerPlan.js';
 
 function optimize(){
     inquirer
     .prompt([
       {
-        type: 'checkbox',
-        name:'optimizeCheckbox',
+        type: 'list',
+        name:'optimizeList',
         message:'',
         choices:[
-            'Clean temp', 'Adjust Power Plan', 'Defrag HardDisk','Reduce visual effects', 'All'
+            'Clean temp', 'Adjust Power Plan', 'Defrag HardDisk','Performance Boost', 'All'
         ],
       },
     ])
     .then(answers => {
-        if(answers.optimizeCheckbox === 'Clean temp'){
+        if(answers.optimizeList === 'Clean temp'){
             cleanTemp();
         }
-        else if(answers.optimizeCheckbox === 'Adjust Power Plan'){
+        else if(answers.optimizeList === 'Adjust Power Plan'){
             powerPlan();
         }
-        else if(answers.optimizeCheckbox === 'Defrag HardDisk'){
+        else if(answers.optimizeList === 'Defrag HardDisk'){
             defragHd();
         }
-        else if(answers.optimizeCheckbox === 'Reduce visual effects'){
-            reduceVisual();
+        else if(answers.optimizeList === 'Performance Boost'){
+            performanceBoost();
         }
-        else if(answers.optimizeCheckbox === 'All'){
+        else if(answers.optimizeList === 'All'){
             allOptions();
         }
     });
