@@ -3,6 +3,7 @@ import cleanTemp from './Options/cltemp.js';
 import defragHd from './Options/defragHd.js';
 import performanceBoost from './Options/performanceBoost.js';
 import powerPlan from './Options/powerPlan.js';
+import allOptions from './Options/allOptions.js';
 
 function optimize(){
     inquirer

@@ -33,6 +33,7 @@ function checkAndSaveUserName() {
                     return;
                 }
                 console.log(colorName(`Hello, ${newDoc.name}! Your name has been saved.`));
+                checkAndSaveUserName();
             });
         }
     });
